@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "name": "@middleware/github-api",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "lib": "babel index.js -d lib",
+    "lib-flow": "flow gen-flow-files *.js --out-dir lib",
+    "prepublish": "npm run lib && npm run lib-flow"
+  },
+  "author": "case <case@casesandberg.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "flow-bin": "^0.63.1",
+    "flow-copy-source": "^1.2.1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0",
+      "flow"
+    ]
+  }
+}
